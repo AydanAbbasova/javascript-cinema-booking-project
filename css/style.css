@@ -1,0 +1,331 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 80px;
+  background-color: #020b1a;
+  color: white;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  margin: 0;
+  font-size: 48px;
+}
+
+.home h2 {
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 16px;
+  font-size: 28px;
+}
+
+.ticket-price,
+.total {
+  margin-left: 6px;
+}
+
+span,
+.price {
+  color: #00c8ff;
+}
+
+a {
+  color: white;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.movies button,
+#bookBtn {
+  padding: 12px;
+  background-color: #0a84ff;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.movies > li {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  grid-template-rows: auto auto auto 1fr;
+  gap: 10px 16px;
+  padding: 16px;
+  background-color: #06162e;
+  border: 1px solid #12305c;
+  border-radius: 12px;
+}
+
+.movies > li > * {
+  grid-column: 2;
+  margin: 0;
+}
+
+.movies img {
+  grid-column: 1;
+  grid-row: 1 / 5;
+  width: 100%;
+  height: 20vh;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.movies h3 {
+  font-size: 20px;
+}
+
+.movies button {
+  align-self: end;
+  padding: 10px;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tags li,
+.selected-seats li {
+  padding: 6px 12px;
+  background-color: #0b3a73;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.details {
+  display: none;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  grid-template-columns: 320px 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.breadcrumb {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 10px;
+  font-size: 22px;
+}
+
+.poster {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 20px;
+}
+
+.info h2 {
+  font-size: 40px;
+}
+
+.info h3 {
+  padding-top: 20px;
+  border-top: 1px solid #2a3f5f;
+  font-size: 24px;
+}
+
+.info .tags li,
+.selected-seats li {
+  padding: 8px 16px;
+  font-size: 16px;
+}
+
+.selected-seats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 40px;
+}
+
+.selected-seats button {
+  margin-left: 8px;
+  padding: 0;
+  background-color: transparent;
+  font-size: 18px;
+}
+
+#bookBtn {
+  width: 100%;
+  padding: 16px;
+  font-size: 20px;
+}
+
+#bookBtn:disabled {
+  opacity: 0.6;
+}
+
+.message {
+  white-space: pre-line;
+  font-size: 18px;
+}
+
+.seats-area {
+  padding-left: 50px;
+  border-left: 1px solid #2a3f5f;
+}
+
+.loading {
+  display: none;
+}
+
+.screen {
+  padding-top: 12px;
+  border-top: 4px solid #00c8ff;
+  text-align: center;
+  letter-spacing: 8px;
+  font-size: 20px;
+}
+
+.seats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin: 40px 0;
+}
+
+.seats button {
+  width: 100%;
+  padding: 18px 0;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.seats .selected {
+  color: #02101f;
+}
+
+.seats .available,
+.legend .available::before {
+  background-color: #0b3a73;
+}
+
+.seats .selected,
+.legend .selected::before {
+  background-color: #00c8ff;
+}
+
+.seats .booked,
+.legend .booked::before {
+  background-color: #555555;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #2a3f5f;
+  font-size: 18px;
+}
+
+.legend li::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+@media (max-width: 1200px) {
+  .movies {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .details {
+    grid-template-columns: 260px 1fr 1fr;
+    gap: 30px;
+  }
+
+  .seats-area {
+    padding-left: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  body {
+    padding: 20px;
+  }
+
+  .details {
+    grid-template-columns: 1fr;
+  }
+
+  .poster {
+    max-width: 260px;
+  }
+
+  .seats-area {
+    padding-left: 0;
+    border-left: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .movies {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  .movies > li {
+    padding: 12px;
+  }
+}

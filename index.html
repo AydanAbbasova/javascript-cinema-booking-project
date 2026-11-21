@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CinemaBooking</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/data.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Cinema<span>Booking</span></h1>
+    </header>
+
+    <main>
+      <section class="home">
+        <h2>Now Showing</h2>
+        <ul class="movies"></ul>
+      </section>
+
+      <section class="details">
+        <p class="breadcrumb">
+          <a href="#" id="homeLink">Home</a> /
+          <span class="movie-name"></span>
+        </p>
+        <img class="poster" alt="Movie poster" />
+
+        <section class="info">
+          <h2 class="title"></h2>
+          <ul class="tags">
+            <li class="genre"></li>
+            <li class="duration"></li>
+            <li class="time"></li>
+          </ul>
+          <p>Ticket Price:<span class="ticket-price"></span></p>
+
+          <h3>Selected Seats</h3>
+          <ul class="selected-seats"></ul>
+
+          <p>Total:<span class="total">$0</span></p>
+
+          <button id="bookBtn">Book Tickets</button>
+          <p class="message"></p>
+        </section>
+
+        <section class="seats-area">
+          <p class="loading">Loading seats...</p>
+          <p class="screen">SCREEN</p>
+          <ul class="seats"></ul>
+
+          <ul class="legend">
+            <li class="available">Available</li>
+            <li class="selected">Selected</li>
+            <li class="booked">Booked</li>
+          </ul>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
